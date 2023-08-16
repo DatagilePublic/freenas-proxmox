@@ -67,7 +67,7 @@ keyring_location=/usr/share/keyrings/ksatechnologies-truenas-proxmox-testing-key
 curl -1sLf 'https://dl.cloudsmith.io/public/ksatechnologies/truenas-proxmox-testing/gpg.CACC9EE03F2DFFCC.key' |  gpg --dearmor >> ${keyring_location}
 ```
 
-Copy the following to /etc/apt/sources.list.d/ksatechnologies-repo.list
+Copy the following to /etc/apt/sources.list.d/ksatechnologies-testing-repo.list
 ```bash
 # Source: KSATechnologies
 # Site: https://cloudsmith.io
