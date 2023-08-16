@@ -1,6 +1,6 @@
 # TrueNAS ZFS over iSCSI interface  [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TCLNEMBUYQUXN&source=url)
 
-## :rotating_light: ATTENTION 2023-08-09 :rotating_light: :construction: New repo coming soon :construction: Thanks for your patience.
+## 📢: ATTENTION 2023-08-16 📢: New repos are now online at Cloudsmith.
 
 ### Updates 2023-02-12<br/>  - Added `systemctl restart pvescheduler.service` command to the package.
 #### Roadmap
@@ -37,19 +37,46 @@
     Marc Hodler
     Martin Gonzalez
 
-### 'main' repo (Follows a release branch - Current 2.x) Currently unavailable.
+### 'truenas-proxmox' repo (Follows a release branch - Current 2.x) Currently unavailable.
 Will be production ready code that has been tested (as best as possible) from the 'testing' repo.
 
-### 'testing' repo (Follows the master branch)
+### 'truenas-proxmox-testing' repo (Follows the master branch)
 Will be 'beta' code for features, bugs, and updates.
 
-## New Installs.
-Issue the following from a command line:
+## New Installs - truenas-proxmox.
+
+### For stable releases, issue the following from a command line:
 ```bash
-curl https://ksatechnologies.jfrog.io/artifactory/ksa-repo-gpg/ksatechnologies-release.gpg -o /etc/apt/trusted.gpg.d/ksatechnologies-release.gpg
-curl https://ksatechnologies.jfrog.io/artifactory/ksa-repo-gpg/ksatechnologies-repo.list -o /etc/apt/sources.list.d/ksatechnologies-repo.list
+keyring_location=/usr/share/keyrings/ksatechnologies-truenas-proxmox-keyring.gpg
+curl -1sLf 'https://dl.cloudsmith.io/public/ksatechnologies/truenas-proxmox/gpg.284C106104A8CE6D.key' |  gpg --dearmor >> ${keyring_location}
 ```
 
+Copy the following to /etc/apt/sources.list.d/ksatechnologies-repo.list
+```bash
+# Source: KSATechnologies
+# Site: https://cloudsmith.io
+# Repository: KSATechnologies / truenas-proxmox
+# Description: TrueNAS plugin for Proxmox VE - Production
+deb [signed-by=/usr/share/keyrings/ksatechnologies-truenas-proxmox-keyring.gpg] https://dl.cloudsmith.io/public/ksatechnologies/truenas-proxmox/deb/debian any-version main
+```
+
+### For development releases, issue the following from a command line:
+```bash
+keyring_location=/usr/share/keyrings/ksatechnologies-truenas-proxmox-testing-keyring.gpg
+curl -1sLf 'https://dl.cloudsmith.io/public/ksatechnologies/truenas-proxmox-testing/gpg.CACC9EE03F2DFFCC.key' |  gpg --dearmor >> ${keyring_location}
+```
+
+Copy the following to /etc/apt/sources.list.d/ksatechnologies-repo.list
+```bash
+# Source: KSATechnologies
+# Site: https://cloudsmith.io
+# Repository: KSATechnologies / truenas-proxmox-testing
+# Description: TrueNAS plugin for Proxmox VE - Testing
+#deb [signed-by=/usr/share/keyrings/ksatechnologies-truenas-proxmox-testing-keyring.gpg] https://dl.cloudsmith.io/public/ksatechnologies/truenas-proxmox-testing/deb/debian any-version main
+```
+Then enable it from the Proxmox UI if you wish to use it.
+
+### Update apt
 Then issue the following to install the package
 ```bash
 apt update
