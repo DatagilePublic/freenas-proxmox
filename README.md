@@ -1,9 +1,10 @@
 # TrueNAS ZFS over iSCSI interface  [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TCLNEMBUYQUXN&source=url)
 
-## 📢: ATTENTION 2023-08-16 📢: New repos are now online at Cloudsmith.
+## 📢: ATTENTION 2023-08-16 📢: New repos are now online at [Cloudsmith](#new-installs).
 
 ### Updates 2023-02-12<br/>  - Added `systemctl restart pvescheduler.service` command to the package.
 #### Roadmap
+* Update the documentation.
 * Fix automated builds.
   * Production - 'main' repo component.
 * Package the patches with the deb package.
@@ -43,7 +44,7 @@ Will be production ready code that has been tested (as best as possible) from th
 ### 'truenas-proxmox-testing' repo (Follows the master branch)
 Will be 'beta' code for features, bugs, and updates.
 
-## New Installs - truenas-proxmox.
+## New Installs
 
 ### For stable releases, issue the following from a command line:
 ```bash
