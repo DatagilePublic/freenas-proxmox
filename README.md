@@ -1,4 +1,4 @@
-# TrueNAS ZFS over iSCSI Plugin for Proxmox VE......FUTURE6
+# TrueNAS ZFS over iSCSI Plugin for Proxmox VE......FUTURE6      ^_^
 
 ## 📢: ATTENTION 2023-08-16 📢: New repos are now online at [Cloudsmith](#new-installs).
 
